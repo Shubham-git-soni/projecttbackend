@@ -30,7 +30,7 @@ public class Controller {
     {
         return "user" ;
     }
-    @PostMapping("/register/user")
+    @PostMapping("/register")
     public User createUser(@RequestBody User user)
     {
         return userService.createUser(user);

@@ -11,7 +11,7 @@ import placementorg.projectt.Repository.UserRepository;
 
 import java.util.Optional;
 @Service
-public class MyUerDetailService implements UserDetailsService {
+public class MyUserDetailService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository ;
@@ -24,7 +24,7 @@ public class MyUerDetailService implements UserDetailsService {
          if(user.isPresent())
          {
              var userObj = user.get();
-             return User.builder().username(userObj.getEmail())
+             return User.builder().username(userObj.getUsername())
                      .password(userObj.getPassword())
                      .roles(userObj.getRole())
                      .build() ;
